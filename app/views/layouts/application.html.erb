@@ -13,7 +13,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Meddit</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -21,13 +21,13 @@
     <form class="form-inline my-2 my-lg-0">
 
       <% if current_user %>
-            You're signed in as <%= current_user.email %>.
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+             Welcome, <%= current_user.email %> &nbsp;
+            <%= link_to "New Post", new_gram_path, class: 'spacer' %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'spacer' %>
           <% else %>
-            <%= link_to "Sign In", new_user_session_path %>
-            <%= link_to "Sign Up", new_user_registration_path %>
+            <%= link_to "Sign In", new_user_session_path, class: 'spacer' %>
+            <%= link_to "Sign Up", new_user_registration_path, class: 'spacer' %>
           <% end %>
-          <br />
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
