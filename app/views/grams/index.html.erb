@@ -6,7 +6,7 @@
 
       <tr>
         <td><%= image_tag gram.picture, class: 'img-fluid thumb' %></td>
-        <td><%= gram.title %></td>
+        <td><%= link_to gram.title, gram_path(gram), class:'img-fluid thumb' %></td>
         <td><%= gram.user.email %></td>
       </tr>
 
