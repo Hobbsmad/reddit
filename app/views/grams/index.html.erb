@@ -5,12 +5,12 @@
       <% @grams.each do |gram| %>
 
       <tr>
-        <td><%= image_tag gram.picture, class: 'img-fluid thumb' %></td>
-        <td><%= link_to gram.title, gram_path(gram), class:'img-fluid thumb' %></td>
-        <td><%= gram.user.email %></td>
+        <td><%= link_to image_tag gram.picture, class: 'img-fluid thumb' %></td>
+        <td class="align-middle"><%= link_to gram.title, gram_path(gram), class:'img-fluid thumb' %></td>
+        <td class="align-middle"><%= gram.user.email %></td>
       </tr>
 
   <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 </div>
