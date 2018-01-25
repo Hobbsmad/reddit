@@ -5,7 +5,7 @@
       <% @grams.each do |gram| %>
 
       <tr>
-        <td><%= link_to image_tag gram.picture, class: 'img-fluid thumb' %></td>
+        <td><%= link_to image_tag(gram.picture, class: 'img-fluid thumb'), gram_path(gram) %></td>
         <td class="align-middle"><%= link_to gram.title, gram_path(gram), class:'img-fluid thumb' %></td>
         <td class="align-middle"><%= gram.user.email %></td>
       </tr>
