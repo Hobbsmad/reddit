@@ -51,6 +51,13 @@ class GramsController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+      Gram.upvote(params[:id])
+    end
+
+    def downvote
+      Gram.upvote(params[:id])
+    end
 
   private
 

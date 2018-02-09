@@ -4,6 +4,6 @@ class Gram < ApplicationRecord
   has_many :comments
 
   mount_uploader :picture, PictureUploader
-
+  acts_as_voteable
   belongs_to :user
 end

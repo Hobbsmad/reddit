@@ -30,6 +30,8 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem "rmagick", "~> 2.13.1"
 gem 'dotenv-rails'
+gem 'thumbs_up'
+gem 'font-awesome-sass', '~> 5.0.6'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

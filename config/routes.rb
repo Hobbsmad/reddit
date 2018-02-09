@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 root "grams#index"
 resources :grams do
     resources :comments, only: :create
+    member do
+      post :upvote
+      post :downvote
+    end
   end
 end

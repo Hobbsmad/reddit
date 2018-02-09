@@ -10,6 +10,12 @@
       <p>
         <%= @gram.message %>
       </p>
+
+        <div class="text-center">
+          <h2><%= link_to "", "#", class: "fas fa-thumbs-up" %>
+            <%= link_to "", "#", class: "fas fa-thumbs-down" %></h2>
+        </div>
+      <br />
     <div class="text-center">
       <% if current_user && current_user == @gram.user %>
           <%= link_to 'Edit', edit_gram_path(@gram), class: 'btn btn-primary' %>
