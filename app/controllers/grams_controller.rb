@@ -52,19 +52,17 @@ class GramsController < ApplicationController
   end
 
 def upvote
-  current_user = User.find_by_id(session[:user_id])
   @gram = Gram.find(params[:id])
-  vote_for(@gram)
+  current_user.vote_exclusively_for(@gram)
 
-  render 'show'
+  redirect_to gram_path(@gram)
 end
 
 def downvote
-  current_user = User.find_by_id(session[:user_id])
   @gram = Gram.find(params[:id])
-  @gram.downvote_by current_user
+  current_user.vote_exclusively_against(@gram)
 
-  render 'show'
+  redirect_to gram_path(@gram)
 end
 
   private
