@@ -1,5 +1,5 @@
 class GramsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     @grams = Gram.all
@@ -51,13 +51,21 @@ class GramsController < ApplicationController
     redirect_to root_path
   end
 
-  def upvote
-      Gram.upvote(params[:id])
-    end
+def upvote
+  current_user = User.find_by_id(session[:user_id])
+  @gram = Gram.find(params[:id])
+  vote_for(@gram)
 
-    def downvote
-      Gram.upvote(params[:id])
-    end
+  render 'show'
+end
+
+def downvote
+  current_user = User.find_by_id(session[:user_id])
+  @gram = Gram.find(params[:id])
+  @gram.downvote_by current_user
+
+  render 'show'
+end
 
   private
 

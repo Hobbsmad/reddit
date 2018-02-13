@@ -12,8 +12,8 @@
       </p>
 
         <div class="text-center">
-          <h2><%= link_to "", "#", class: "fas fa-thumbs-up" %>
-            <%= link_to "", "#", class: "fas fa-thumbs-down" %></h2>
+          <h2><%= link_to "", upvote_gram_path(@gram), method: "put", class: "fas fa-thumbs-up" %>
+            <%= link_to "", downvote_gram_path(@gram), method: "put", class: "fas fa-thumbs-down" %></h2>
         </div>
       <br />
     <div class="text-center">
