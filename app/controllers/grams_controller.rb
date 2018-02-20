@@ -2,7 +2,7 @@ class GramsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
-    @grams = Gram.all
+    @grams = Gram.all.page(params[:page]).per_page(25)
   end
 
   def new
