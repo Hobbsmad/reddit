@@ -28,8 +28,10 @@
             <%= link_to "Sign In", new_user_session_path, class: 'spacer' %>
             <%= link_to "Sign Up", new_user_registration_path, class: 'spacer' %>
           <% end %>
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <%= form_tag(grams_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+          <%= submit_tag "Search" %>
+        <% end %>
     </form>
   </div>
 </nav>

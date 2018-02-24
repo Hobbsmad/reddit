@@ -2,7 +2,11 @@ class GramsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
-    @grams = Gram.all.page(params[:page]).per_page(25)
+    if params[:search]
+      @grams = Gram.search(params[:search]).order("created_at DESC")
+    else
+      @grams = Gram.all.order('created_at DESC')
+    end
   end
 
   def new
