@@ -3,9 +3,8 @@ class GramsController < ApplicationController
 
   def index
     if params[:search]
-      @grams = Gram.search(params[:search]).order("created_at DESC")
+      @grams = Gram.search(params[:search]).page(params[:page]).per_page(25).order('created_at DESC')
     else
-      # @grams = Gram.all.order('created_at DESC')
       @grams = Gram.all.page(params[:page]).per_page(25).order('created_at DESC')
     end
   end
